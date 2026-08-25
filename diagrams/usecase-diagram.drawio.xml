@@ -1,0 +1,102 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="Q3UzsmRX3rp8v6GLeN0v">
+    <mxGraphModel dx="1414" dy="903" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bnd" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#333333;verticalAlign=top;fontSize=14;fontStyle=1;spacingTop=6;" value="Vaccination Cohort and Dose Scheduling System" vertex="1">
+          <mxGeometry height="760" width="540" x="160" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" value="Citizen Registrant" vertex="1">
+          <mxGeometry height="60" width="30" x="40" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" value="Vaccination Officer" vertex="1">
+          <mxGeometry height="60" width="30" x="40" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" value="Health Administrator" vertex="1">
+          <mxGeometry height="60" width="30" x="40" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" value="National ID Service" vertex="1">
+          <mxGeometry height="60" width="30" x="740" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=12;" value="Certificate Authority" vertex="1">
+          <mxGeometry height="60" width="30" x="740" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="u1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="UC-01&lt;br&gt;Register citizen" vertex="1">
+          <mxGeometry height="60" width="200" x="200" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="u2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="UC-02&lt;br&gt;Book vaccination slot" vertex="1">
+          <mxGeometry height="60" width="200" x="200" y="222" as="geometry" />
+        </mxCell>
+        <mxCell id="u3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="UC-03&lt;br&gt;Reschedule appointment" vertex="1">
+          <mxGeometry height="60" width="200" x="200" y="344" as="geometry" />
+        </mxCell>
+        <mxCell id="u4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="UC-04&lt;br&gt;Record dose administration" vertex="1">
+          <mxGeometry height="60" width="200" x="200" y="466" as="geometry" />
+        </mxCell>
+        <mxCell id="u5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="UC-05&lt;br&gt;Verify certificate QR" vertex="1">
+          <mxGeometry height="60" width="200" x="200" y="588" as="geometry" />
+        </mxCell>
+        <mxCell id="u6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="UC-06&lt;br&gt;Set cohort and interval policy" vertex="1">
+          <mxGeometry height="60" width="200" x="200" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="u7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=12;" value="UC-07&lt;br&gt;Assign priority cohort" vertex="1">
+          <mxGeometry height="60" width="190" x="470" y="165" as="geometry" />
+        </mxCell>
+        <mxCell id="u8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=12;" value="UC-08&lt;br&gt;Verify dose interval" vertex="1">
+          <mxGeometry height="60" width="190" x="470" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="u9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=12;" value="UC-09&lt;br&gt;Issue digital certificate" vertex="1">
+          <mxGeometry height="60" width="190" x="470" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="u10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontSize=12;" value="UC-10&lt;br&gt;Log adverse event" vertex="1">
+          <mxGeometry height="60" width="190" x="470" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" edge="1" parent="1" source="a1" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" edge="1" parent="1" source="a1" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" edge="1" parent="1" source="a1" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" edge="1" parent="1" source="a2" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" edge="1" parent="1" source="a2" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" edge="1" parent="1" source="a3" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s7" edge="1" parent="1" source="a4" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s8" edge="1" parent="1" source="a5" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="s9" edge="1" parent="1" source="a5" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#333333;" target="u5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i1" edge="1" parent="1" source="u1" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;endSize=12;strokeColor=#333333;fontSize=11;" target="u7" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i2" edge="1" parent="1" source="u2" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;endSize=12;strokeColor=#333333;fontSize=11;" target="u8" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="i3" edge="1" parent="1" source="u3" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;endSize=12;strokeColor=#333333;fontSize=11;" target="u8" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-6" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i4" edge="1" parent="1" source="u4" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;endSize=12;strokeColor=#333333;fontSize=11;" target="u9" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x1" edge="1" parent="1" source="u10" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;endSize=12;strokeColor=#333333;fontSize=11;" target="u4" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
