@@ -1,0 +1,24 @@
+# Personal working notes, not submission material
+format.md
+lab2-jira-walkthrough.md
+
+# Word and Office lock files
+~$*
+*.tmp
+
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Draw.io backups
+*.bkp
+*.dtmp
