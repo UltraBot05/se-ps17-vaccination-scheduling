@@ -1,0 +1,76 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Component Diagram" id="vcdss-lab3">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1"
+        arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Client layer -->
+        <mxCell id="portal" value="&lt;&lt;component&gt;&gt;&#10;Citizen Portal" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="100" y="60" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="console" value="&lt;&lt;component&gt;&gt;&#10;Officer Console" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="960" y="60" width="240" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Service layer -->
+        <mxCell id="reg" value="&lt;&lt;component&gt;&gt;&#10;Registration &amp; Cohort Service" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="book" value="&lt;&lt;component&gt;&gt;&#10;Booking &amp; Scheduling Service" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="340" y="360" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="dose" value="&lt;&lt;component&gt;&gt;&#10;Dose Recording Service" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="700" y="360" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="cert" value="&lt;&lt;component&gt;&gt;&#10;Certificate Service" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="360" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="policy" value="&lt;&lt;component&gt;&gt;&#10;Policy Configuration Service" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="340" y="540" width="220" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- External systems -->
+        <mxCell id="nid" value="&lt;&lt;external system&gt;&gt;&#10;National ID Service" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;dashed=1;fillColor=#f5f5f5;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="800" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ca" value="&lt;&lt;external system&gt;&gt;&#10;Certificate Authority" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;dashed=1;fillColor=#f5f5f5;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="800" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Assembly connectors (solid, labelled with interface name) -->
+        <mxCell id="e1" value="RegistrationAPI" style="endArrow=none;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="portal" target="reg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="BookingAPI" style="endArrow=none;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="portal" target="book">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="DoseRecordingAPI" style="endArrow=none;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="console" target="dose">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="VerifyCertificateAPI" style="endArrow=none;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="console" target="cert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="CohortLookup" style="endArrow=none;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="book" target="reg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="PolicyRules" style="endArrow=none;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="book" target="policy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="IdentityVerification" style="endArrow=none;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="reg" target="nid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="SignCertificate" style="endArrow=none;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="cert" target="ca">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Use dependency (dashed arrow) -->
+        <mxCell id="e9" value="&lt;&lt;use&gt;&gt; triggers issuance" style="endArrow=open;dashed=1;html=1;fontSize=10;fontStyle=2;" edge="1" parent="1" source="dose" target="cert">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

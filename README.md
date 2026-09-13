@@ -1,3 +1,4 @@
+
 # Software Engineering Lab Work
 
 Abhigyan Dutta, PES2UG24CS019, 5A CSE
@@ -22,10 +23,11 @@ at a gate with a queue behind it.
 
 ## Labs
 
-| Lab | Topic | Deliverable |
-|---|---|---|
-| [Lab 1](lab1-requirements-usecase/) | Requirements engineering and UML use case modelling | Requirements table, use case diagram, use case flow |
-| [Lab 2](lab2-agile-backlog-sprint/) | Agile backlog creation and sprint simulation in Jira | Backlog of epics and stories, two sprints, burndown charts, reflection |
+| Lab                                          | Topic                                                   | Deliverable                                                            |
+| -------------------------------------------- | ------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [Lab 1](lab1-requirements-usecase/)           | Requirements engineering and UML use case modelling     | Requirements table, use case diagram, use case flow                    |
+| [Lab 2](lab2-agile-backlog-sprint/)           | Agile backlog creation and sprint simulation in Jira    | Backlog of epics and stories, two sprints, burndown charts, reflection |
+| [Lab 3](lab3-architecture-component-diagram/) | Component modelling and architectural pattern selection | Architecture choice, UML component diagram, one page justification     |
 
 Each lab folder has its own README with the detail.
 
@@ -42,6 +44,13 @@ The same requirements turned into a Jira backlog: 5 epics, 17 user stories, 101 
 Fibonacci scale. Two one week sprints of 40 points each, both completed, with 21 points deliberately
 left in the backlog. Every story traces back to a requirement or use case from Lab 1.
 
+### Lab 3
+
+The five epics from Lab 2 mapped onto a Microservices architecture, with a UML component diagram
+covering seven components and the two external systems from Lab 1. A one page justification covers
+the architectural choice, two scenario specific reasons, a security advantage and a performance
+benefit.
+
 ## Layout
 
 ```
@@ -49,9 +58,12 @@ lab1-requirements-usecase/
   docs/        deliverable docx and pdf
   diagrams/    drawio source and exported png
 lab2-agile-backlog-sprint/
-  docs/        deliverable docx
+  docs/        deliverable docx and pdf
   backlog/     working sheet the Jira board was built from
   screenshots/ evidence for the submission
+lab3-architecture-component-diagram/
+  docs/        deliverable docx
+  diagrams/    drawio source and exported png and pdf
 ```
 
 Deliverables are named `PES2UG24CS019_SE_LabN`.
