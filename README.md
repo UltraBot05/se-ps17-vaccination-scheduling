@@ -28,6 +28,7 @@ at a gate with a queue behind it.
 | [Lab 1](lab1-requirements-usecase/)           | Requirements engineering and UML use case modelling     | Requirements table, use case diagram, use case flow                    |
 | [Lab 2](lab2-agile-backlog-sprint/)           | Agile backlog creation and sprint simulation in Jira    | Backlog of epics and stories, two sprints, burndown charts, reflection |
 | [Lab 3](lab3-architecture-component-diagram/) | Component modelling and architectural pattern selection | Architecture choice, UML component diagram, one page justification     |
+| [Lab 4](lab4-vibecoding/)                     | Vibe coding with an AI assistant (individual)           | Fixed and extended Wordle game, before and after screenshots, chat log |
 
 Each lab folder has its own README with the detail.
 
@@ -51,6 +52,13 @@ covering seven components and the two external systems from Lab 1. A one page ju
 the architectural choice, two scenario specific reasons, a security advantage and a performance
 benefit.
 
+### Lab 4
+
+A separate individual lab, not tied to the vaccination system. I was assigned a broken terminal
+Wordle game and used Claude to fix the duplicate letter feedback bug and the invalid guesses that
+used up turns, then add 4, 5 and 6 letter modes, guess history and a session summary. Tested
+against the scenario's required cases with a small assert based test file.
+
 ## Layout
 
 ```
@@ -64,6 +72,10 @@ lab2-agile-backlog-sprint/
 lab3-architecture-component-diagram/
   docs/        deliverable docx
   diagrams/    drawio source and exported png and pdf
+lab4-vibecoding/
+  code/        updated Wordle game and test file
+  screenshots/ before and after evidence
+  docs/        chat history pdf
 ```
 
 Deliverables are named `PES2UG24CS019_SE_LabN`.
