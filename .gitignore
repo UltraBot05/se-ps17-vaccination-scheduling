@@ -8,6 +8,7 @@ lab*/handout/
 # Python
 __pycache__/
 *.pyc
+venv/
 
 # Word and Office lock files
 ~$*
