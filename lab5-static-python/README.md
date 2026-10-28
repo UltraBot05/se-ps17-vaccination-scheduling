@@ -30,6 +30,22 @@ The main ones. The full table with line numbers is in [issues.md](issues.md).
 - **Broad `except Exception`.** Now catches only the three errors a bad rule can cause.
 - **Same due collected twice.** No tool reported this. Found while fixing `collect`.
 
+## Reflection
+
+Full answers to the four reflection questions are in [reflection.md](reflection.md). In short:
+
+- **Easiest and hardest.** The style and naming fixes were mechanical. `eval` was the hardest,
+  because Bandit's suggested fix, `ast.literal_eval`, cannot work out `50 * 2` and would have
+  broken the late fee feature.
+- **False positives.** B105 flagged a password that nothing in the program reads. Flake8 and Pylint
+  also disagree on line length (79 vs 100). And none of the tools noticed that the same due could be
+  collected twice.
+- **Workflow.** Flake8 and Bandit in a pre-commit hook, all three in CI on every pull request, with
+  `pylint --fail-under=9.5` and Bandit failing on Medium or higher.
+- **Improvements.** Pylint went from 5.81 to 10.00 with the same program output. Injection, code
+  execution and double collection were all checked by hand. A 10.00 score still does not mean the
+  code is correct.
+
 ## Commits
 
 One commit per tool, as the handout asks:
