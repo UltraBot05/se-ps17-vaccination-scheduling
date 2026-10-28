@@ -1,3 +1,8 @@
+"""Maintenance dues ledger for an apartment society.
+
+Bills flats each month, collects payments, works out late fees and
+lists the flats that still owe money. Everything is kept in memory.
+"""
 import ast
 import operator
 import os
@@ -15,18 +20,26 @@ ALLOWED_OPS = {
 }
 
 
-def addDue(flat, month, amount, history=[]):
+def add_due(flat, month, amount, history=None):
+    """Bill a flat for a month and record it in the given history list."""
+    if history is None:
+        history = []
     conn.execute("INSERT INTO dues VALUES (?, ?, ?, 0)", (flat, month, amount))
     history.append((flat, month))
     return history
 def collect(flat, month):
-    row = conn.execute("SELECT amount FROM dues WHERE flat = ? AND month = ?", (flat, month)).fetchone()
-    if row:
-        conn.execute("UPDATE dues SET paid = 1 WHERE flat = ? AND month = ?", (flat, month))
-        return row[0]
+    """Mark a due as paid and return the amount, or None if nothing is owed."""
+    row = conn.execute(
+        "SELECT amount FROM dues WHERE flat = ? AND month = ? AND paid = 0", (flat, month)
+    ).fetchone()
+    if row is None:
+        return None
+    conn.execute("UPDATE dues SET paid = 1 WHERE flat = ? AND month = ?", (flat, month))
+    return row[0]
 
 
 def calc(node):
+    """Work out a parsed arithmetic expression using only numbers and + - * /."""
     if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
         return node.value
     if isinstance(node, ast.BinOp) and type(node.op) in ALLOWED_OPS:
@@ -35,26 +48,28 @@ def calc(node):
 
 
 def penalty(rule):
+    """Return the late fee for a rule like '50 * 2', or 0 if the rule is invalid."""
     try:
         late_fee = calc(ast.parse(rule, mode="eval").body)
-    except Exception:
+    except (SyntaxError, ValueError, ZeroDivisionError):
         late_fee = 0
     return late_fee
 
 
 def pending():
+    """List the flats that still have an unpaid due."""
     rows = conn.execute("SELECT flat FROM dues WHERE paid = 0").fetchall()
-    if rows != None:
-        return [r[0] for r in rows]
-    return []
+    return [r[0] for r in rows]
 
 
 def main():
-    addDue("A-101", "Oct", 2500)
-    addDue("A-102", "Oct", 2500)
+    """Run a short demonstration of the ledger."""
+    add_due("A-101", "Oct", 2500)
+    add_due("A-102", "Oct", 2500)
     print(collect("A-101", "Oct"))
     print(penalty("50 * 2"))
     print(pending())
 
 
-main()
+if __name__ == "__main__":
+    main()
