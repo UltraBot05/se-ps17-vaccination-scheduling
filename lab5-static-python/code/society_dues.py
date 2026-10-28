@@ -9,7 +9,9 @@ import os
 import sqlite3
 
 conn = sqlite3.connect(":memory:")
-conn.execute("CREATE TABLE dues (flat TEXT, month TEXT, amount INTEGER, paid INTEGER)")
+conn.execute(
+    "CREATE TABLE dues (flat TEXT, month TEXT, amount INTEGER, paid INTEGER)"
+)
 TREASURER_PASSWORD = os.environ.get("TREASURER_PASSWORD", "")
 
 ALLOWED_OPS = {
@@ -24,22 +26,30 @@ def add_due(flat, month, amount, history=None):
     """Bill a flat for a month and record it in the given history list."""
     if history is None:
         history = []
-    conn.execute("INSERT INTO dues VALUES (?, ?, ?, 0)", (flat, month, amount))
+    conn.execute(
+        "INSERT INTO dues VALUES (?, ?, ?, 0)", (flat, month, amount)
+    )
     history.append((flat, month))
     return history
+
+
 def collect(flat, month):
     """Mark a due as paid and return the amount, or None if nothing is owed."""
     row = conn.execute(
-        "SELECT amount FROM dues WHERE flat = ? AND month = ? AND paid = 0", (flat, month)
+        "SELECT amount FROM dues WHERE flat = ? AND month = ? AND paid = 0",
+        (flat, month),
     ).fetchone()
     if row is None:
         return None
-    conn.execute("UPDATE dues SET paid = 1 WHERE flat = ? AND month = ?", (flat, month))
+    conn.execute(
+        "UPDATE dues SET paid = 1 WHERE flat = ? AND month = ?",
+        (flat, month),
+    )
     return row[0]
 
 
 def calc(node):
-    """Work out a parsed arithmetic expression using only numbers and + - * /."""
+    """Work out a parsed arithmetic expression with numbers and + - * /."""
     if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
         return node.value
     if isinstance(node, ast.BinOp) and type(node.op) in ALLOWED_OPS:
@@ -48,7 +58,7 @@ def calc(node):
 
 
 def penalty(rule):
-    """Return the late fee for a rule like '50 * 2', or 0 if the rule is invalid."""
+    """Return the late fee for a rule like '50 * 2', or 0 if it is invalid."""
     try:
         late_fee = calc(ast.parse(rule, mode="eval").body)
     except (SyntaxError, ValueError, ZeroDivisionError):

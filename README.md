@@ -29,6 +29,7 @@ at a gate with a queue behind it.
 | [Lab 2](lab2-agile-backlog-sprint/)           | Agile backlog creation and sprint simulation in Jira    | Backlog of epics and stories, two sprints, burndown charts, reflection |
 | [Lab 3](lab3-architecture-component-diagram/) | Component modelling and architectural pattern selection | Architecture choice, UML component diagram, one page justification     |
 | [Lab 4](lab4-vibecoding/)                     | Vibe coding with an AI assistant (individual)           | Fixed and extended Wordle game, before and after screenshots, chat log |
+| [Lab 5](lab5-static-python/)                  | Static code analysis with Pylint, Bandit and Flake8 (individual) | Cleaned script, before and after reports, issue table, reflection |
 
 Each lab folder has its own README with the detail.
 
@@ -59,6 +60,14 @@ Wordle game and used Claude to fix the duplicate letter feedback bug and the inv
 used up turns, then add 4, 5 and 6 letter modes, guess history and a session summary. Tested
 against the scenario's required cases with a small assert based test file.
 
+### Lab 5
+
+Another separate individual lab. I was given a small society dues ledger in Python and ran Pylint,
+Bandit and Flake8 on it. Fixed an SQL injection, an `eval` on user input, a hardcoded password, a
+mutable default argument and a too broad `except`, plus the style issues, in one commit per tool.
+Pylint went from 5.81 to 10.00 and Bandit and Flake8 ended with no issues. I also found a bug none
+of the tools reported, where the same due could be collected twice.
+
 ## Layout
 
 ```
@@ -70,12 +79,18 @@ lab2-agile-backlog-sprint/
   backlog/     working sheet the Jira board was built from
   screenshots/ evidence for the submission
 lab3-architecture-component-diagram/
-  docs/        deliverable docx
+  docs/        deliverable docx and pdf
   diagrams/    drawio source and exported png and pdf
 lab4-vibecoding/
   code/        updated Wordle game and test file
   screenshots/ before and after evidence
-  docs/        chat history pdf
+  docs/        chat history docx and pdf
+lab5-static-python/
+  code/        cleaned society_dues.py
+  reports/     pylint, bandit and flake8 reports, before and after
+  docs/        deliverable docx and pdf
+  issues.md    issue table
+  reflection.md
 ```
 
 Deliverables are named `PES2UG24CS019_SE_LabN`.
