@@ -30,6 +30,7 @@ at a gate with a queue behind it.
 | [Lab 3](lab3-architecture-component-diagram/) | Component modelling and architectural pattern selection | Architecture choice, UML component diagram, one page justification     |
 | [Lab 4](lab4-vibecoding/)                     | Vibe coding with an AI assistant (individual)           | Fixed and extended Wordle game, before and after screenshots, chat log |
 | [Lab 5](lab5-static-python/)                  | Static code analysis with Pylint, Bandit and Flake8 (individual) | Cleaned script, before and after reports, issue table, reflection |
+| [Lab 6](lab6-code-branch-coverage/)           | Code and branch coverage with coverage and pytest (individual) | Code coverage and branch coverage test files, terminal screenshots |
 
 Each lab folder has its own README with the detail.
 
@@ -68,6 +69,13 @@ mutable default argument and a too broad `except`, plus the style issues, in one
 Pylint went from 5.81 to 10.00 and Bandit and Flake8 ended with no issues. I also found a bug none
 of the tools reported, where the same due could be collected twice.
 
+### Lab 6
+
+A third individual lab. I was given an electricity bill module with two starter tests at 38% line
+coverage. The first test file reaches 100% line coverage but still misses one branch, a late bill of
+2000 or less. The second test file adds that case and the boundary values for every decision,
+reaching 100% branch coverage with 28 tests.
+
 ## Layout
 
 ```
@@ -91,6 +99,10 @@ lab5-static-python/
   docs/        deliverable docx and pdf
   issues.md    issue table
   reflection.md
+lab6-code-branch-coverage/
+  code/        module, starter test and the two coverage test files
+  screenshots/ terminal output after reaching the coverage targets
+  docs/        deliverable docx and pdf
 ```
 
 Deliverables are named `PES2UG24CS019_SE_LabN`.
