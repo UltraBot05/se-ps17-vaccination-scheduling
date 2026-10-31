@@ -1,6 +1,7 @@
 # Personal working notes, not submission material
 format.md
 lab2-jira-walkthrough.md
+SE_LAB_WORKFLOW.md
 
 # Lab handouts and class allocation sheets (not my work, allocation has every SRN)
 lab*/handout/
@@ -9,6 +10,9 @@ lab*/handout/
 __pycache__/
 *.pyc
 venv/
+.coverage
+.pytest_cache/
+htmlcov/
 
 # Word and Office lock files
 ~$*
