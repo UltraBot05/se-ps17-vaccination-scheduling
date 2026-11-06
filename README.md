@@ -31,6 +31,7 @@ at a gate with a queue behind it.
 | [Lab 4](lab4-vibecoding/)                     | Vibe coding with an AI assistant (individual)           | Fixed and extended Wordle game, before and after screenshots, chat log |
 | [Lab 5](lab5-static-python/)                  | Static code analysis with Pylint, Bandit and Flake8 (individual) | Cleaned script, before and after reports, issue table, reflection |
 | [Lab 6](lab6-code-branch-coverage/)           | Code and branch coverage with coverage and pytest (individual) | Code coverage and branch coverage test files, terminal screenshots |
+| [Lab 7](lab7-fuzz/)                           | Fuzz testing for input validation bugs with Hypothesis (individual) | Hypothesis tests, fixed module, before and after screenshots |
 
 Each lab folder has its own README with the detail.
 
@@ -76,6 +77,14 @@ coverage. The first test file reaches 100% line coverage but still misses one br
 2000 or less. The second test file adds that case and the boundary values for every decision,
 reaching 100% branch coverage with 28 tests.
 
+### Lab 7
+
+Same assigned repo as Lab 6, new module. Three functions parse text typed by the user: meter
+readings, a CSV of daily units and a tariff code. Seven Hypothesis tests found six bugs, including
+crashes on `None`, a `KeyError` for unknown codes and negative units accepted as real. The fixed
+version only ever raises `ValueError` with a clear reason, and the program prints it instead of
+crashing.
+
 ## Layout
 
 ```
@@ -102,6 +111,10 @@ lab5-static-python/
 lab6-code-branch-coverage/
   code/        module, starter test and the two coverage test files
   screenshots/ terminal output after reaching the coverage targets
+  docs/        deliverable docx and pdf
+lab7-fuzz/
+  code/        fixed electricity_bill.py and the Hypothesis tests
+  screenshots/ program and test output, before and after the fix
   docs/        deliverable docx and pdf
 ```
 
