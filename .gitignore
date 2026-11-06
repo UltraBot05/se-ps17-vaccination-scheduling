@@ -13,6 +13,7 @@ venv/
 .coverage
 .pytest_cache/
 htmlcov/
+.hypothesis/
 
 # Word and Office lock files
 ~$*
